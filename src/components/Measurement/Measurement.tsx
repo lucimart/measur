@@ -13,7 +13,7 @@ export enum MeasurementType {
     Cup = "cup",
     Gram = "gram"
 }
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const Measurement = ({measurement, setMeasurement, isPlural}: MeasurementProps) => {
 
     const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {

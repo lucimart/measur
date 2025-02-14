@@ -7,6 +7,7 @@ type ResultProps = {
     measurement: MeasurementType;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const Result = ({amount, material, measurement}: ResultProps) => {
     const isPlural = amount !== 1;
 
