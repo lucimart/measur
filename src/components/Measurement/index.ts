@@ -1,1 +1,1 @@
-export { Measurement, MeasurementType } from "./Measurement";
+export { Measurement } from "./Measurement";
