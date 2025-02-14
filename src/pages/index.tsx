@@ -59,7 +59,7 @@ export default function Home() {
           </div>
         </main>
         <footer className={styles.footer}>
-         <a href="https://twitter.com/fuegoenfango">Made with {"<3"} by Lucía</a>
+         <a href="https://twitter.com/fuegoenfango">Made with <span className={styles.heart}>{"<3"}</span> by Lucía</a>
         </footer>
       </div>
     </>

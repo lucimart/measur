@@ -1,7 +1,9 @@
 import { useCallback } from "react";
 import styled from '@emotion/styled';
 
-const Input = styled.input``;
+const Input = styled.input`
+color: rgb(185 183 172);
+`;
 
 type MeasurementProps = {
     measurement: MeasurementType;
