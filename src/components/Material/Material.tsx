@@ -1,29 +1,31 @@
-import { useCallback } from "react";
+import React from 'react';
+import { AutocompleteInput, OptionType } from '../AutocompleteInput';
+import { MATERIALS } from '../../constants';
 import styled from '@emotion/styled';
 
-const Input = styled.input`
-color: rgb(185 183 172);
+const Wrapper = styled.div`
+  display: inline-block;
 `;
 
-export enum MaterialEnum {
-    Flour = "flour",
-    Sugar = "sugar",
-}
-
 type MaterialProps = {
-    material: MaterialEnum;
-    setMaterial: (material: MaterialEnum) => void;
+  material: string;
+  setMaterial: (material: string) => void;
 };
 
+export const Material = ({ material, setMaterial }: MaterialProps) => {
+  const options: OptionType[] = MATERIALS.map((m) => ({
+    id: m.id,
+    label: m.name,
+  }));
 
-export const Material = ({material, setMaterial}: MaterialProps) => {
-    const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-        setMaterial(e.target.value as MaterialEnum);
-    }, [setMaterial]);
-
-    return(
-    <Input value={material ? material : "nothing"} onChange={onChange} />
-        // <option value="flour">flour</option>
-        // <option value="sugar">sugar</option>
-    );
+  return (
+    <Wrapper>
+      <AutocompleteInput
+        options={options}
+        value={material}
+        onChange={setMaterial}
+        placeholder="Select material"
+      />
+    </Wrapper>
+  );
 };

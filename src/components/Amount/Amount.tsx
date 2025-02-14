@@ -1,22 +1,19 @@
-import { useCallback } from "react";
+import React, { useCallback } from 'react';
 import styled from '@emotion/styled';
 
 const Input = styled.input`
-color: rgb(185 183 172);
+  color: rgb(185, 183, 172);
 `;
 
 type AmountProps = {
-    amount: number;
-    setAmount: (amount: number) => void;
+  amount: number;
+  setAmount: (amount: number) => void;
 };
 
-export const Amount = ({amount, setAmount}: AmountProps) => {
+export const Amount = ({ amount, setAmount }: AmountProps) => {
+  const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setAmount(Number(e.target.value));
+  }, [setAmount]);
 
-    const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-        setAmount(Number(e.target.value));
-    }, [setAmount]);
-    
-    return(
-    <Input type="number" value={amount ? amount: 0} onChange={onChange} />
-    );
+  return <Input type="number" value={amount || 0} onChange={onChange} />;
 };
