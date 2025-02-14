@@ -1,1 +1,1 @@
-export { Material, MaterialEnum } from "./Material";
+export { Material } from "./Material";
