@@ -17,6 +17,6 @@ export const Amount = ({amount, setAmount}: AmountProps) => {
     }, [setAmount]);
     
     return(
-    <Input type="number" value={amount} onChange={onChange} />
+    <Input type="number" value={amount ? amount: 0} onChange={onChange} />
     );
 };

@@ -23,7 +23,7 @@ export const Measurement = ({measurement, setMeasurement, isPlural}: Measurement
     }, [setMeasurement]);
     
     return(
-        <Input value={measurement} onChange={onChange} />
+        <Input value={measurement ? measurement : "nothings"} onChange={onChange} />
             // <option value="cup">cup{isPlural ? "s" : ""}</option>
             // <option value="gram">gram{isPlural ? "s" : ""}</option>
     );

@@ -17,6 +17,6 @@ export const Result = ({amount, material, measurement}: ResultProps) => {
     const isPlural = amount !== 1;
 
     return(
-    <Span>{amount} {measurement}{isPlural ? "s": ""}</Span>
+    <Span>{amount} {measurement ? measurement: "nothing"}{isPlural ? "s": ""}</Span>
     );
 }

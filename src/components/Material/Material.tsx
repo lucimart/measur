@@ -22,7 +22,7 @@ export const Material = ({material, setMaterial}: MaterialProps) => {
     }, [setMaterial]);
 
     return(
-    <Input value={material} onChange={onChange} />
+    <Input value={material ? material : "nothing"} onChange={onChange} />
         // <option value="flour">flour</option>
         // <option value="sugar">sugar</option>
     );
